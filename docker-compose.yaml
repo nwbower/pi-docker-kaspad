@@ -1,0 +1,28 @@
+version: '3.5'
+
+services:
+
+  kaspad:
+
+    image: nwbower/pi-kaspad
+
+    container_name: kaspad
+
+    #https://docs.docker.com/config/containers/start-containers-automatically/
+    #Always restart the container if it stops.
+    #If it is manually stopped, it is restarted only when Docker daemon restarts or the container itself is manually restarted.
+    restart: always
+
+    volumes:
+
+      - ./datadir2:/root/.kaspad/kaspa-mainnet/datadir2
+
+    ports:
+
+      - "16110:16110"
+
+      - "16111:16111"
+
+      - "8082:8082"
+
+    command: '/kaspad --utxoindex'
