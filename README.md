@@ -1,5 +1,7 @@
 # pi-docker-kaspad
 Kaspa Node in Docker on a Raspberry Pi 4 Model B 8GB - arm64
+<p>Container hosted publicly at : <a href="https://hub.docker.com/r/nwbower/pi-kaspad">https://hub.docker.com/r/nwbower/pi-kaspad</a></p>
+<p>Buy me a coffee: kaspa:qqz5xkyz36hj2pu9srdzd46wzlz2v24qf7mkgxtg44lnzl2gpxkp7jezgjf6z</P>
 
 <h1>Containerized Kaspad for Raspberry Pi 4 Model B.</h1>
 <p>Yes, you can run a Kaspa Node on your Raspberry Pi 4 Model B. I'm using an 8GB version and it's been working great! The 8GB version is required as the node idles around 4.5gb of mem when synced. I'm booting to Ubuntu 22.04.1 LTS on a 512GB SSD.</p>
