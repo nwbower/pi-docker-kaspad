@@ -9,18 +9,18 @@ Kaspa Node in Docker on a Raspberry Pi 4 Model B 8GB - arm64
 <p>There is also a great CLI reference for <a href="https://kaspawiki.net/index.php/Setting_up_a_CLI_node#Setting_up_a_node_in_Docker">setting up a Kaspa node in docker</a> on the kaspawiki.</p>
 </br>
 <p>Kaspa is an ancient Aramaic word for “silver” and “money.”
-Kaspa aims to become the most resilient, robust and fastest PoW BlockDAG in the world.</p>
-<p><a href="https://kaspa.org">https://kaspa.org</a></p>
+Kaspa aims to become the most resilient, robust and fastest PoW BlockDAG in the world.<br>
+<a href="https://kaspa.org">https://kaspa.org</a></p>
 <p>Kaspad release binaries are unaltered from the corresponding official version at:<br>
 <a href="https://github.com/kaspanet/kaspad">https://github.com/kaspanet/kaspad</a> (ISC licensed)</p>
 
 <p>The loadbalancer, HAProxy, is GPLv2 licensed.<br>
 <a href="http://www.haproxy.org/">http://www.haproxy.org/</a></p>
 
-<p>Build source for this image is available at:
+<p>Build source for this image is available at:<br>
 <a href="https://github.com/nwbower/pi-docker-kaspad">https://github.com/nwbower/pi-docker-kaspad</a></p>
 
-<p>Credit to supertypo for the loadbalancer and supporting readme reference available at:
+<p>Credit to supertypo for the loadbalancer and supporting readme reference available at:<br>
 <a href="https://github.com/supertypo/docker-kaspad">https://github.com/supertypo/docker-kaspad</a></p>
 </br>
 
@@ -49,7 +49,7 @@ Check the logs to know when it's ready.</p>
 <pre><code>sudo docker logs -n 1000 -f kaspad
 </code></pre>
 <p>The node is fully synced when it prints lots of "Accepted block ..." lines.</p>
-<h3>View kaspad disk usage<h3>
+<h3>View kaspad disk usage</h3>
 <pre><code>sudo docker system df -v
 </code></pre>
 <h4>Later, when you want to upgrade to the newest kaspad</h4>
@@ -61,6 +61,10 @@ sudo docker run --pull always -d --restart unless-stopped -v /var/kaspad/:/app/d
 sudo rm -r /var/kaspad/.kaspad
 sudo docker start kaspad
 </code></pre>
+</br>
+
+<h2>Opening Connections:</h2>
+<p>By forwarding port 16111 on your router (unless configured otherwise) to the machine running kaspad, your node becomes a public node which other members of the network can use to sync. Even though private nodes can still mine, it is encouraged that you make your node public for the general health of the network. Like any other decentralized systems, Kaspa works best when there are many public nodes. Additionally, forward 16110 for utxo mining access.</p>
 </br>
 
 <h2>Prerequisits for building this image on your Pi:</h2>
